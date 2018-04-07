@@ -99,11 +99,13 @@ window.initMap = () => {
     [].slice.apply(document.querySelectorAll('#map a')).forEach(function(item) {
         item.setAttribute('tabindex','-1');
     });
-})
+  })
 
 
   updateRestaurants();
 }
+
+
 
 /**
  * Update page and map for current restaurants.
@@ -164,12 +166,31 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  image.alt = 'Restaurant ' + restaurant.name;
+  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/1.jpg')
+    image.alt = restaurant.name + ' Restaurant, classical indoor decoration';
+  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/2.jpg')
+      image.alt = restaurant.name + ' Restaurant, pizza on a plate';
+  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/3.jpg')
+      image.alt = restaurant.name + ' Restaurant, modern indoor wood decoration';
+  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/4.jpg')
+      image.alt = restaurant.name + ' Restaurant, usual outdoor neon decoration';
+  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/5.jpg')
+      image.alt = restaurant.name + ' Restaurant, crowded, industrial interior';
+  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/6.jpg')
+      image.alt = restaurant.name + ' Restaurant, spacious, american interior design';
+  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/7.jpg')
+      image.alt = restaurant.name + ' Restaurant, small premise, unordinary exterior';
+  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/8.jpg')
+      image.alt = restaurant.name + ' Restaurant, classical outdoor decoration';
+  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/9.jpg')
+      image.alt = restaurant.name + ' Restaurant, asian dinnerwear';
+  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/10.jpg')
+      image.alt = restaurant.name + ' Restaurant, minimalist interior design';
 
   li.append(image);
   const div = document.createElement('div');
   div.classList.add("restaurant-info");
-  const name = document.createElement('h1');
+  const name = document.createElement('h3');
   name.innerHTML = restaurant.name;
   div.append(name);
 

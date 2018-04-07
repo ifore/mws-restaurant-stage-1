@@ -58,6 +58,27 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/1.jpg')
+    image.alt = restaurant.name + ' Restaurant, classical indoor decoration';
+  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/2.jpg')
+      image.alt = restaurant.name + ' Restaurant, pizza on a plate';
+  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/3.jpg')
+      image.alt = restaurant.name + ' Restaurant, modern indoor wood decoration';
+  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/4.jpg')
+      image.alt = restaurant.name + ' Restaurant, usual outdoor neon decoration';
+  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/5.jpg')
+      image.alt = restaurant.name + ' Restaurant, crowded, industrial interior';
+  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/6.jpg')
+      image.alt = restaurant.name + ' Restaurant, spacious, american interior design';
+  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/7.jpg')
+      image.alt = restaurant.name + ' Restaurant, small premise, unordinary exterior';
+  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/8.jpg')
+      image.alt = restaurant.name + ' Restaurant, classical outdoor decoration';
+  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/9.jpg')
+      image.alt = restaurant.name + ' Restaurant, asian dinnerwear';
+  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/10.jpg')
+      image.alt = restaurant.name + ' Restaurant, minimalist interior design';
+
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
@@ -95,7 +116,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
-  const title = document.createElement('h2');
+  const title = document.createElement('h3');
   title.innerHTML = 'Reviews';
   container.appendChild(title);
 
