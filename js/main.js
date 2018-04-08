@@ -165,27 +165,9 @@ createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
   const image = document.createElement('img');
   image.className = 'restaurant-img';
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/1.jpg')
-    image.alt = restaurant.name + ' Restaurant, classical indoor decoration';
-  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/2.jpg')
-      image.alt = restaurant.name + ' Restaurant, pizza on a plate';
-  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/3.jpg')
-      image.alt = restaurant.name + ' Restaurant, modern indoor wood decoration';
-  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/4.jpg')
-      image.alt = restaurant.name + ' Restaurant, usual outdoor neon decoration';
-  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/5.jpg')
-      image.alt = restaurant.name + ' Restaurant, crowded, industrial interior';
-  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/6.jpg')
-      image.alt = restaurant.name + ' Restaurant, spacious, american interior design';
-  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/7.jpg')
-      image.alt = restaurant.name + ' Restaurant, small premise, unordinary exterior';
-  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/8.jpg')
-      image.alt = restaurant.name + ' Restaurant, classical outdoor decoration';
-  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/9.jpg')
-      image.alt = restaurant.name + ' Restaurant, asian dinnerwear';
-  if(DBHelper.imageUrlForRestaurant(restaurant) === '/img/10.jpg')
-      image.alt = restaurant.name + ' Restaurant, minimalist interior design';
+  var imageSrc = DBHelper.imageUrlForRestaurant(restaurant);
+  image.src = imageSrc;
+  image.alt = restaurant.name + DBHelper.altForImage(imageSrc);
 
   li.append(image);
   const div = document.createElement('div');

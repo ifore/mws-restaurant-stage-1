@@ -167,4 +167,28 @@ class DBHelper {
     return marker;
   }
 
+  static altForImage(imageSrc){
+    if(imageSrc === '/img/1.jpg')
+      return ' Restaurant, classical indoor decoration';
+    if(imageSrc=== '/img/2.jpg')
+      return ' Restaurant, pizza on a plate' ;
+    if(imageSrc === '/img/3.jpg')
+      return ' Restaurant, modern indoor wood decoration';
+    if(imageSrc === '/img/4.jpg')
+      return ' Restaurant, usual outdoor neon decoration';
+    if(imageSrc === '/img/5.jpg')
+      return ' Restaurant, crowded, industrial interior';
+    if(imageSrc === '/img/6.jpg')
+      return ' Restaurant, spacious, american interior design';
+    if(imageSrc === '/img/7.jpg')
+      return ' Restaurant, small premise, unordinary exterior';
+    if(imageSrc === '/img/8.jpg')
+      return ' Restaurant, classical outdoor decoration';
+    if(imageSrc === '/img/9.jpg')
+      return ' Restaurant, asian dinnerwear';
+    if(imageSrc === '/img/10.jpg')
+      return ' Restaurant, minimalist interior design';
+
+  }
+
 }
